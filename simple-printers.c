@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 /**
  * print_from_to - prints a range of char addresses
  *
@@ -16,20 +17,22 @@
 int print_from_to(char *start, char *stop, char *except)
 
 {
-		int sum = 0;
 
-		while (start <= stop)
-		{
+	int sum = 0;
 
-			if (start != except)
+	while (start <= stop)
 
-				sum += _putchar(*start);
+	{
 
-			start++;
+		if (start != except)
 
-		}
+			sum += _putchar(*start);
 
-		return (sum);
+		start++;
+
+	}
+
+	return (sum);
 
 }
 
@@ -41,7 +44,6 @@ int print_from_to(char *start, char *stop, char *except)
  * @params: the parameters struct
  *
  * Return: number bytes printed
- *
  */
 
 int print_rev(va_list ap, params_t *params)
@@ -55,13 +57,14 @@ int print_rev(va_list ap, params_t *params)
 	(void)params;
 
 	if (str)
+
 	{
 
 		for (len = 0; *str; str++)
 
 			len++;
 
-			str--;
+		str--;
 
 		for (; len > 0; len--, str--)
 
@@ -72,7 +75,6 @@ int print_rev(va_list ap, params_t *params)
 	return (sum);
 
 }
-
 
 /**
  * print_rot13 - prints string in rot13
@@ -90,7 +92,6 @@ int print_rot13(va_list ap, params_t *params)
 {
 
 	int i, index;
-
 	int count = 0;
 
 	char arr[] =
@@ -106,16 +107,15 @@ int print_rot13(va_list ap, params_t *params)
 	index = 0;
 
 	while (a[i])
+
 	{
 
 		if ((a[i] >= 'A' && a[i] <= 'Z')
-
-			|| (a[i] >= 'a' && a[i] <= 'z'))
+				|| (a[i] >= 'a' && a[i] <= 'z'))
 
 		{
 
 			index = a[i] - 65;
-
 			count += _putchar(arr[index]);
 
 		}
@@ -125,6 +125,8 @@ int print_rot13(va_list ap, params_t *params)
 
 		i++;
 
-		}
+	}
+
 	return (count);
+
 }
